@@ -1,0 +1,110 @@
+/* General */
+* {
+    box-sizing: border-box;
+    font-family: "FSAlbertPro";
+}
+body{
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: "FSAlbertPro";
+    src: url("../fonts/FSAlbertPro-Bold.woff");
+    font-weight: 500;
+}
+
+
+/* popup */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(16, 16, 16, 0.5);
+    z-index: 999;
+    display: none;
+}
+body.overlay-active::before {
+    display: block;
+}
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 457px;
+    max-height: 655px;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 1.5% 2.5%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+}
+#popup  *{
+    font-family: "FSAlbertPro";
+}
+#popup .popup-title{
+    margin-bottom: 20px;
+    text-align: center;
+}
+#popup .popup-title *{
+    margin: 0;
+    color: #00A05A;
+}
+#popup .popup-body{
+    height: 240px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    overflow-y: auto;
+}
+#popup .popup-body ol,
+#popup .popup-body ul{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#popup .popup-body li::marker{
+    color: #6A8381;
+}
+#popup .counter-and-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#popup .counter-and-btn *{
+    margin: 0;
+}
+#popup p {
+    margin: 0 0 20px;
+}
+#popup button {
+    padding: 10px 20px;
+    background: #00A05F;
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+#popup button:hover {
+    background: #29504D;
+}
+body.overlay-active #popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slide {
+    display: none;
+}
+.slide.active {
+    display: block;
+}
